@@ -210,6 +210,10 @@ Resources:
           Required: true
           Mutable: true
 
+        - Name: tenantid
+          Mutable: true
+          AttributeDataType: String
+
       AutoVerifiedAttributes:
         - email
 
