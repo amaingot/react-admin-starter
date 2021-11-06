@@ -106,10 +106,7 @@
           "ZipFile": "const response = require('cfn-response');\nconst aws = require('aws-sdk');\n\nexports.handler = async function (event, context) {\n  try {\n    const userPoolId = event.ResourceProperties.userpoolId;\n    const lambdaConfig = event.ResourceProperties.lambdaConfig;\n    const config = {};\n    const cognitoClient = new aws.CognitoIdentityServiceProvider();\n    const userPoolConfig = await cognitoClient.describeUserPool({ UserPoolId: userPoolId }).promise();\n    const userPoolParams = userPoolConfig.UserPool;\n    // update userPool params\n\n    const updateUserPoolConfig = {\n      UserPoolId: userPoolParams.Id,\n      Policies: userPoolParams.Policies,\n      SmsVerificationMessage: userPoolParams.SmsVerificationMessage,\n      AccountRecoverySetting: userPoolParams.AccountRecoverySetting,\n      AdminCreateUserConfig: userPoolParams.AdminCreateUserConfig,\n      AutoVerifiedAttributes: userPoolParams.AutoVerifiedAttributes,\n      EmailConfiguration: userPoolParams.EmailConfiguration,\n      EmailVerificationMessage: userPoolParams.EmailVerificationMessage,\n      EmailVerificationSubject: userPoolParams.EmailVerificationSubject,\n      VerificationMessageTemplate: userPoolParams.VerificationMessageTemplate,\n      SmsAuthenticationMessage: userPoolParams.SmsAuthenticationMessage,\n      MfaConfiguration: userPoolParams.MfaConfiguration,\n      DeviceConfiguration: userPoolParams.DeviceConfiguration,\n      SmsConfiguration: userPoolParams.SmsConfiguration,\n      UserPoolTags: userPoolParams.UserPoolTags,\n      UserPoolAddOns: userPoolParams.UserPoolAddOns,\n    };\n\n    // removing undefined keys\n    Object.keys(updateUserPoolConfig).forEach(key => updateUserPoolConfig[key] === undefined && delete updateUserPoolConfig[key]);\n\n    /*removing UnusedAccountValidityDays as deprecated\n    InvalidParameterException: Please use TemporaryPasswordValidityDays in PasswordPolicy instead of UnusedAccountValidityDays\n    */\n    if (updateUserPoolConfig.AdminCreateUserConfig && updateUserPoolConfig.AdminCreateUserConfig.UnusedAccountValidityDays) {\n      delete updateUserPoolConfig.AdminCreateUserConfig.UnusedAccountValidityDays;\n    }\n\n    lambdaConfig.forEach(lambda => (config[`${lambda.triggerType}`] = lambda.lambdaFunctionArn));\n    if (event.RequestType == 'Delete') {\n      try {\n        updateUserPoolConfig.LambdaConfig = {};\n        const result = await cognitoClient.updateUserPool(updateUserPoolConfig).promise();\n        console.log('delete response data ' + JSON.stringify(result));\n        await response.send(event, context, response.SUCCESS, {});\n      } catch (err) {\n        console.log(err.stack);\n        await response.send(event, context, response.FAILED, { err });\n      }\n    }\n    if (event.RequestType == 'Update' || event.RequestType == 'Create') {\n      updateUserPoolConfig.LambdaConfig = config;\n      console.log(updateUserPoolConfig);\n      try {\n        const result = await cognitoClient.updateUserPool(updateUserPoolConfig).promise();\n        console.log('createOrUpdate response data ' + JSON.stringify(result));\n        await response.send(event, context, response.SUCCESS, { result });\n      } catch (err) {\n        console.log(err.stack);\n        await response.send(event, context, response.FAILED, { err });\n      }\n    }\n  } catch (err) {\n    console.log(err.stack);\n    await response.send(event, context, response.FAILED, { err });\n  }\n};\n"
         },
         "Role": {
-          "Fn::GetAtt": [
-            "authTriggerFnServiceRole08093B67",
-            "Arn"
-          ]
+          "Fn::GetAtt": ["authTriggerFnServiceRole08093B67", "Arn"]
         },
         "Handler": "index.handler",
         "Runtime": "nodejs12.x"
@@ -123,10 +120,7 @@
       "Type": "Custom::CustomAuthTriggerResourceOutputs",
       "Properties": {
         "ServiceToken": {
-          "Fn::GetAtt": [
-            "authTriggerFn7FCFA449",
-            "Arn"
-          ]
+          "Fn::GetAtt": ["authTriggerFn7FCFA449", "Arn"]
         },
         "userpoolId": {
           "Ref": "userpoolId"

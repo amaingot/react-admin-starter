@@ -13,9 +13,7 @@
         {
           "category": "auth",
           "resourceName": "reactadminstarter0a2aa96b0a2aa96b",
-          "attributes": [
-            "UserPoolId"
-          ]
+          "attributes": ["UserPoolId"]
         }
       ]
     }
@@ -45,32 +43,20 @@
           "category": "function",
           "resourceName": "reactadminstarter0a2aa96b0a2aa96bPostConfirmation",
           "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
+          "attributes": ["Arn", "Name"]
         }
       ],
       "customAuth": false,
       "frontendAuthConfig": {
-        "loginMechanisms": [
-          "PREFERRED_USERNAME"
-        ],
-        "signupAttributes": [
-          "EMAIL",
-          "NAME"
-        ],
+        "loginMechanisms": ["PREFERRED_USERNAME"],
+        "signupAttributes": ["EMAIL", "NAME"],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
           "passwordPolicyCharacters": []
         },
         "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
+        "mfaTypes": ["SMS"],
+        "verificationMechanisms": ["EMAIL"]
       }
     }
   },
@@ -83,17 +69,12 @@
         {
           "category": "auth",
           "resourceName": "reactadminstarter0a2aa96b0a2aa96b",
-          "attributes": [
-            "UserPoolId"
-          ]
+          "attributes": ["UserPoolId"]
         },
         {
           "category": "function",
           "resourceName": "AdminQueriesa712f8f4",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
+          "attributes": ["Arn", "Name"]
         }
       ]
     }
