@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "reactadminstarterbd71775fbd71775f",
+  "functionName": "reactadminstarterbd71775fbd71775fCustomMessage",
+  "resourceName": "reactadminstarterbd71775fbd71775fCustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "/home/coder/.nvm/versions/node/v14.16.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "reactadminstarterbd71775fbd71775fCustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "hmm.dev",
+  "EMAILSUBJECT": "",
+  "EMAILMESSAGE": "",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}

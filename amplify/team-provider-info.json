@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactadminstarter-dev-205927-authRole",
+      "UnauthRoleArn": "arn:aws:iam::140978229662:role/amplify-reactadminstarter-dev-205927-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::140978229662:role/amplify-reactadminstarter-dev-205927-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactadminstarter-dev-205927-deployment",
+      "UnauthRoleName": "amplify-reactadminstarter-dev-205927-unauthRole",
+      "StackName": "amplify-reactadminstarter-dev-205927",
+      "StackId": "arn:aws:cloudformation:us-east-1:140978229662:stack/amplify-reactadminstarter-dev-205927/ee5535d0-419f-11ec-9741-12b2ae7324a3",
+      "AmplifyAppId": "dr33vv5v8vlmc"
+    },
+    "categories": {
+      "function": {
+        "reactadminstarterbd71775fbd71775fCustomMessage": {
+          "REDIRECTURL": "hmm.dev",
+          "EMAILSUBJECT": "",
+          "EMAILMESSAGE": ""
+        },
+        "reactadminstarterbd71775fbd71775fPostAuthentication": {},
+        "reactadminstarterbd71775fbd71775fPostConfirmation": {
+          "GROUP": "users"
+        },
+        "reactadminstarterbd71775fbd71775fPreSignup": {},
+        "reactadminstarterbd71775fbd71775fPreTokenGeneration": {}
+      },
+      "auth": {
+        "reactadminstarterbd71775fbd71775f": {}
+      }
+    }
+  }
+}
