@@ -16,17 +16,35 @@
         "reactadminstarterbd71775fbd71775fCustomMessage": {
           "REDIRECTURL": "hmm.dev",
           "EMAILSUBJECT": "",
-          "EMAILMESSAGE": ""
+          "EMAILMESSAGE": "",
+          "deploymentBucketName": "amplify-reactadminstarter-dev-205927-deployment",
+          "s3Key": "amplify-builds/reactadminstarterbd71775fbd71775fCustomMessage-543348544a3663424538-build.zip"
         },
-        "reactadminstarterbd71775fbd71775fPostAuthentication": {},
+        "reactadminstarterbd71775fbd71775fPostAuthentication": {
+          "deploymentBucketName": "amplify-reactadminstarter-dev-205927-deployment",
+          "s3Key": "amplify-builds/reactadminstarterbd71775fbd71775fPostAuthentication-61544f67673573694c67-build.zip"
+        },
         "reactadminstarterbd71775fbd71775fPostConfirmation": {
-          "GROUP": "users"
+          "GROUP": "users",
+          "deploymentBucketName": "amplify-reactadminstarter-dev-205927-deployment",
+          "s3Key": "amplify-builds/reactadminstarterbd71775fbd71775fPostConfirmation-6d59446a547359664e35-build.zip"
         },
-        "reactadminstarterbd71775fbd71775fPreSignup": {},
-        "reactadminstarterbd71775fbd71775fPreTokenGeneration": {}
+        "reactadminstarterbd71775fbd71775fPreSignup": {
+          "deploymentBucketName": "amplify-reactadminstarter-dev-205927-deployment",
+          "s3Key": "amplify-builds/reactadminstarterbd71775fbd71775fPreSignup-424e4c362b366d444a39-build.zip"
+        },
+        "reactadminstarterbd71775fbd71775fPreTokenGeneration": {
+          "deploymentBucketName": "amplify-reactadminstarter-dev-205927-deployment",
+          "s3Key": "amplify-builds/reactadminstarterbd71775fbd71775fPreTokenGeneration-572f4150394159757633-build.zip"
+        },
+        "AdminQueriese09e67d9": {
+          "deploymentBucketName": "amplify-reactadminstarter-dev-205927-deployment",
+          "s3Key": "amplify-builds/AdminQueriese09e67d9-5436497134486f6b6859-build.zip"
+        }
       },
       "auth": {
-        "reactadminstarterbd71775fbd71775f": {}
+        "reactadminstarterbd71775fbd71775f": {},
+        "userPoolGroups": {}
       }
     }
   }
